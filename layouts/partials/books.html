@@ -1,0 +1,37 @@
+{{ "<!-- BOOKS -->" | safeHTML }}
+<section class="no-padding" id="books">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">{{ with .Site.Params.books.headline }}{{ . }}{{ end }}</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            {{ range .Site.Data.books }}
+            <div class="col-lg-4 col-sm-6">
+                <a href="#booksModal{{ .modalID }}" class="books-box books-link" data-toggle="modal">
+                    <img src="img/books/{{ .img }}" class="img-responsive" alt="">
+                    <div class="books-box-caption">
+                        <div class="books-box-caption-content">
+			<div class="project-name text-faded">
+				Click to Learn More!
+		        </div>
+			    <!--
+                            <div class="project-category text-faded">
+                                {{ .category }}
+                            </div>
+                            <div class="project-name">
+                                {{ .title }}
+                            </div>
+			    -->
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
